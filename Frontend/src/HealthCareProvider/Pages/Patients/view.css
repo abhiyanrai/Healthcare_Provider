@@ -1,0 +1,71 @@
+
+.div-bg{
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.bg-colorfill{
+    background-color: #00FFFF;
+}
+.control2{
+    border-radius: 0!important;
+    border-color: #646464!important;
+    padding: .5rem!important;
+}
+.primary-symptom{
+    text-align: center;
+    border: 1px solid #646464;
+    font-weight: 700;
+    font-size: larger;
+}
+.second-table{
+        padding: 0.3rem .5rem!important;
+        border: 1px solid #646464;
+        border-radius: 0!important;
+}
+.lt-rt-blt{
+    background-color: #0000FF;
+}
+.lt-rt-blt td{
+    padding: .3rem 1.5rem;
+}
+.lt-rt-blt h6{
+    color: #fff;
+}
+.prim-sy-tr td{
+    padding: .3rem 1.5rem;
+}
+.blue-30{
+    background-color: #4285F4;
+}
+.warning{
+    background-color: #ea4335!important;
+}
+.additional-note{
+    background-color: #4285F4;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.2rem;
+}
+input[type='checkbox']{
+    height: 16px;
+    width: 16px;
+    accent-color: #808080;
+}
+.mr-ms{
+        font-size: 14px;
+}
+.warngs{
+    display: flex;
+    justify-content: space-evenly;
+    background: #ea4335;
+    padding: 0.2rem;
+}
+.warngs h5{
+    color: #fff;
+}
+.warngs h5:last-child{
+        font-weight: 700;
+}

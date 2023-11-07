@@ -1,0 +1,5 @@
+@host=http://localhost:5001/api/v1/common/email
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmMwMGJhZjQ4YTk1MWVjYWJlMjVkNyIsImVtYWlsIjoic3VwZXJhZG1pbkBpbnRlbGxpc3BpbmUuY29tIiwicm9sZSI6InN1cGVyIGFkbWluIiwiaWF0IjoxNjYzODUyNjU3fQ.oo4tOEdbJkdr94cnBP9Sowmdputhnox1DUG68eG_Gyk
+POST {{host}}/email
+Content-Type: application/json
+Authorization: Bearer {{token}}

@@ -1,0 +1,10 @@
+@host=http://localhost:5001/api/v1/common/download
+
+###
+GET {{host}}/csv-format
+Content-Type: application/json
+
+
+###
+GET {{host}}/diagnoses-format
+Content-Type: application/json

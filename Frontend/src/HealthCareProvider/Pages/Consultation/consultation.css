@@ -1,0 +1,75 @@
+.copy-text {
+  border: 1px solid #c5c5c5;
+  padding: 5px 15px;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px #e7eaf0;
+  background: #0967ae00;
+}
+
+.font-w {
+  font-weight: 600;
+  color: #000;
+}
+
+.sy-lf-rt-bt {
+  font-weight: 600;
+  margin-left: 10px;
+  color: #000;
+}
+
+.btn-close-con-form {
+  font-size: 12px;
+  opacity: 1;
+}
+
+.card-p {
+  padding: 0.7rem 1.5rem;
+}
+
+.form-select.jnl {
+  font-weight: 400;
+  color: #16192c;
+  font-size: 1rem;
+  padding: 0.55rem 1.5rem 0.55rem 0.75rem;
+}
+
+.thead-font tr th {
+  font-size: 0.8rem;
+  color: #6c6c6c;
+  font-weight: 700;
+}
+.Diagn ul li {
+  background-color: #495392;
+}
+.bg-bd {
+  background-color: #edf5fb;
+}
+.accorbtn {
+  border: 1px solid #495392;
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.searchP {
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+}
+.searchP input {
+  text-indent: 20px;
+}
+.searchP .fa-search {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+.searchP button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

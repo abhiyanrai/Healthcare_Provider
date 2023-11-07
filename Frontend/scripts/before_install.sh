@@ -1,0 +1,1 @@
+rm -rf /home/ubuntu/account-owner-dashboard/build

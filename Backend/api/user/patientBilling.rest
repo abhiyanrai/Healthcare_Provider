@@ -1,0 +1,103 @@
+@host=http://localhost:5001/api/v1/user/patient/billing
+
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTQxMWIwN2Y2NmM2YjBlNjgzMGY0MiIsImVtYWlsIjoibmFpbmFzaHdhbmlAZ21haWwuY29tIiwicm9sZSI6IkFjb3VudCBvd25lciIsImlhdCI6MTY5NDc1ODg4MH0.V4Lyrfl1mX_CSkijVnjv72T-VjzsMHzMuKnDTh7Uw4o
+
+
+POST {{host}}/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{ 
+    "patientId": "64e6e78ccf628d0baf17aaf3",
+    "totalAmount": 1011,
+    "discountApplied": 19,
+    "billAmount": 200,
+    "orderJson": [
+        {
+          "serviceId": "650404cc832f432a5f34cbd1"
+        }
+    ],
+    "serviceDate": "2000-10-19",
+    "paymentMode": "Cash"
+}
+
+
+###
+PATCH  {{host}}/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "6412debb0d512da8abf9464a",
+  "discountApplied": "40%"
+}
+
+
+###
+PUT {{host}}/delete
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+  "id": "6412debb0d512da8abf9464a"
+}
+
+
+
+###
+GET {{host}}/all/byPatientId
+?id=63e9e373f14bd3e6553f50d8
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+
+###
+GET {{host}}/byId
+?id=64e60736fbe08c1d717fc672
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/checkBilling
+?id=64394e168887b042a8f352a9
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+POST {{host}}/payableAmount
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+  "discountPercentage": 19,
+  "servicesToBuy": [
+    {
+      "serviceId": "64dca98969a1857363c7fbb3"
+    },
+    {
+      "serviceId": "64dca753f9cc390801658e28"
+    },
+    {
+      "serviceId": "64e32407474a2198a1d34726"
+    }
+  ]
+}
+
+
+###
+PATCH  {{host}}/billCancelledById
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "65043d6e7d008582c068ffdb"
+}
+
+
+
+
+

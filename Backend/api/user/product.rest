@@ -1,0 +1,12 @@
+@host=http://localhost:5001/api/v1/user/
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDAxMzA4N2NmYTg5MWQ4OWI5OTMwZiIsImVtYWlsIjoiYWJoaXNoZWsxQGdtYWlsLmNvbSIsInJvbGUiOiJIZWFsdGggY2FyZSBwcm92aWRlciIsImlhdCI6MTY2NTE0NjE2MywiZXhwIjoxNjgwNjk4MTYzfQ.vdcJsreM-pGaWHsNz_DFPUAJeXmoM7076wCYrMQpp8E
+
+
+
+POST {{host}}/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name" : "kakak"
+}

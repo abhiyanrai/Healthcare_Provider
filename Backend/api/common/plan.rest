@@ -1,0 +1,43 @@
+# @host=https://stage-api.myintellispine.com/api/v1/common/plan
+@host=http://localhost:5001/api/v1/common/plan
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzIzNzE4N2M0NWRkZWM2MTEyMTIwZSIsImVtYWlsIjoic3VwZXJhZG1pbkBpbnRlbGxpc3BpbmUuY29tIiwicm9sZSI6IlN1cGVyIGFkbWluIiwiaWF0IjoxNjkwNDQ5ODM5fQ.1Ss3MXrwR7C6sBOL2bDHrxRJQr-FlKK50UtZujAk-6I
+POST {{host}}/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Healthcare Provider",
+  "description": "Account Owner Product",
+  "price": "250"
+}
+
+###
+GET {{host}}/byId
+?id=64a53f3f7f66c6b0e683304e
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/all
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+PATCH  {{host}}/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "63514ceeba4fa2c070fbadce",
+  "name": "saksham"
+}
+
+###
+PATCH {{host}}/updatePrice
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "64268a885e8ad2e28b5c52cd",
+  "price": "2000"
+}

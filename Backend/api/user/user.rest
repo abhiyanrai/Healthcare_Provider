@@ -1,0 +1,120 @@
+@host=http://localhost:5001/api/v1/user/
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzhhYjc0MjIzMDgxNjI4OTdmMDAwZiIsImVtYWlsIjoiY2hhbmNoYWxAeW9wbWFpbC5jb20iLCJyb2xlIjoiQWNvdW50IG93bmVyIiwiaWF0IjoxNjkyMTY1NzY0fQ.46ZcDabON16onxFXNCX4OquHRlFpPVkGtXe0XdTSn10
+
+GET {{host}}/byAuth
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+PATCH {{host}}/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "firstName" : "Abhishek",
+  "lastName": "Kashyap",
+  "contactNo": 12345678
+}
+
+###
+PATCH {{host}}/updateById
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "6347de7680be0b3add1617df",
+  "firstName" : "Abhishek",
+  "lastName": "Kashyap",
+  "contactNo": 12345678
+}
+
+###
+PATCH {{host}}/changePassword
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "oldPassword" : "Admin@12345",
+  "newPassword" : "Admin@123456",
+  "confirmPassword" : "Admin@123456"
+}
+
+###
+PATCH {{host}}/forgotPassword
+Content-Type: application/json
+
+{
+  "email": "kadsfasd@team.cliffex.com"
+}
+
+
+###
+GET {{host}}/dashboard/all  
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/transaction/all
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/set-invoice-number
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "invoiceNumber": 83
+}
+
+###
+POST {{host}}/createAndUpdateClinicProfile
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "64e86ecf89b12d33b51ad107",
+  "name": "Mafiso",
+  "speciality": "Clubiing",
+  "address": "C-423",
+  "email": "{}{}",
+  "website": "ncasd",
+  "contactNo": "UUU",
+  "clinicPic": "HHH"
+}
+
+
+###
+GET {{host}}/getClinicDetailsById
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+POST {{host}}/createAndUpdateBankDetails
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "id": "64e891df71364d34727320ec",
+    "currency": "INR",
+    "bankName": "Kotak",
+    "bankCode": "3812",
+    "accountNo": "28342",
+    "swiftCode": "9323",
+    "sortCode": "9234"
+}
+
+
+
+###
+GET {{host}}/getBankDetailsById
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+
+

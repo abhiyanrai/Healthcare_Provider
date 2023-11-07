@@ -1,0 +1,44 @@
+.fc-scrollgrid-sync-table {
+  height: 650px !important;
+  width: 100% !important;
+}
+.fc .fc-view-harness {
+  height: 690px !important;
+}
+.fc-button-active {
+  background-color: #5c60f5 !important;
+  border-color: #5c60f5 !important;
+}
+.fc-button-primary {
+  background-color: #0967ae !important;
+  border: #0967ae !important;
+}
+.font-w {
+  font-weight: 600;
+  color: #000;
+}
+.track-select .css-13cymwt-control{
+  border: none !important;
+}
+.track-select .css-1u9des2-indicatorSeparator{
+  display: none;
+}
+.track-select > div>div>div:first-child{
+  margin-right: 2px;
+  background: #3788d8;
+  padding: 0 12px;
+  border-radius: 30px;
+  color: #fff;
+}
+.track-select .css-1dimb5e-singleValue{
+  color: #FFF;
+}
+.day-slot th{
+  padding: 0px 5px 0px 0px !important;
+}
+.day-slot td{
+  padding: 0px 0px 0px 5px !important;
+}
+.input-group .btn{
+  z-index: 0 !important;
+}

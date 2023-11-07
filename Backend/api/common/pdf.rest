@@ -1,0 +1,12 @@
+@host=http://localhost:5001/api/v1/common/pdf
+
+
+###
+GET {{host}}/patient/billing
+?id=64fedb735ddfe02dac016968
+&email=
+Content-Type: application/json
+
+###
+GET {{host}}/patient/billingHtml
+Content-Type: application/json

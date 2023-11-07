@@ -1,0 +1,35 @@
+@host=http://localhost:5002/api/v1/admin/userSubscription
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDY4NDFlODU0YjBjNTk3MmNiNTcxNSIsImVtYWlsIjoiYWJoaXNoZWszQGdtYWlsLmNvbSIsInJvbGUiOiJIZWFsdGggY2FyZSBwcm92aWRlciIsImlhdCI6MTY2NjA3MzExNSwiZXhwIjoxNjgxNjI1MTE1fQ.SXQOOo3cWE348NBeJfmTUR0-DTeqvwT7PqtuAwVxfvI
+POST {{host}}/create
+Content-Type: application/json
+
+{
+  "responseJSON": "",
+  "noOfHealthCareProvider": 1,
+  "userId": "637c90da0a405b4338249b12"
+}
+
+###
+GET {{host}}/byId/6401e8a64159d1e57a6c3282
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/byUserId/637c90da0a405b4338249b12
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/byAuth
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/currentSubscriptionByUserId
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/all
+Content-Type: application/json
+Authorization: Bearer {{token}}

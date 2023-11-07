@@ -1,0 +1,126 @@
+@host=http://localhost:5001/api/v1/user/visitDetail
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGM2ZmEyZDRiN2QzMzQ1ZmE0YmE5YyIsImVtYWlsIjoibmFpbmFzaHdhbmlAZ21haWwuY29tIiwicm9sZSI6IkFjb3VudCBvd25lciIsImlhdCI6MTY5MjYwMDc0OH0.vAnf0_AWNSJ3QcCUWj4jwE_wRDHVu_oRxgJBu-cimHY
+
+
+###
+POST {{host}}/create
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+{ 
+    "appointmentId": "64a25f4524dc8c5e08bb92b7",
+    "examinationId": "64b8ce4e24a07327b32338fa",
+    "patientId": "64b7addd7573e0f0f408a928",
+    "functional" : {
+        "Adams": { 
+        "FixedSI": { "position": { "left": true, "right": true }, "BLT": true },
+        "Free": { "position": { "left": true, "right": true }, "BLT":  true},
+        "Lumb": { "position": { "left": true, "right": true }, "Deg": "gg", "Neg": true },
+        "Thor": { "position": { "left": true, "right": true }, "Deg": "hh", "Neg": true }
+    },  
+    "Crom": { 
+        "EXT": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "FLX": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "LLB": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "LROT": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "PROT": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "RLB": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" }
+    },
+    "Listings": { "L1": "Lasdf", "L2": "Lasdf", "L3": "Lasdf" },
+    "Notes": "Lasdf",
+    "SI": { "low": true, "position": { "left": true, "right": true }, "cm": "1.1" },
+    "ProneCrest": { " height": true, "position": { "left": true, "right": true }, "cm": "2.2" },
+    "TMJ": { "step1": "Lasdf", "step2": "Lasdf", "step3": "Lasdf" }, 
+    "shoulderForm": [
+        { "testName": "Lasdf", "left": "Lasdf", "right": "Lasdf", "Rn": true, "Pn": true }
+     ] 
+   },
+  "treatments": {
+    "shoulderOption":[{"left":"yashkkk", "leftValue":"yashkkk", "right":"yashkkk", "rightValue":"yashkkk"}],
+    "adjacent":true,
+    "Scoliosis":true,
+    "Distraction":true,
+    "exam":true,
+    "DC":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "HP":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "Kinesiotaping":{
+      "name":{ "tspine":true, "lspine":true, "both":true },
+      "kinesiotapingPosition": [{ "left":"yashkkk", "right":"yashkkk" }],
+      "treatmentPlan":{ "asNeed":true, "time":true },
+      "treatmentFrequency":{ "frequency":"yashkkk", "duration":"yashkkk" },
+      "nextAppointments":{ "first":"yashkkk", "second":"yashkkk", "third":"yashkkk" }
+    }
+  } 
+}
+
+
+
+###
+PATCH {{host}}/updateById
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+   "id": "63ecb59a1e337e18b987e2e9",
+    "functional" : {
+        "Adams": { 
+        "FixedSI": { "position": { "left": true, "right": true }, "BLT": true },
+        "Free": { "position": { "left": true, "right": true }, "BLT":  true},
+        "Lumb": { "position": { "left": true, "right": true }, "Deg": "gg", "Neg": true },
+        "Thor": { "position": { "left": true, "right": true }, "Deg": "hh", "Neg": true }
+    },
+    "Crom": { 
+        "EXT": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "FLX": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "LLB": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "LROT": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "PROT": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "RLB": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" }
+    },
+    "Listings": { "L1": "Lasdf", "L2": "Lasdf", "L3": "Lasdf" },
+    "Notes": "Lasdf",
+    "SI": { "low": true, "position": { "left": true, "right": true }, "cm": "Lasdf" },
+    "proneCrest": { "height": true, "position": { "left": true, "right": true }, "cm": "Lasdf" },
+    "TMJ": { "step1": "Lasdf", "step2": "Lasdf", "step3": "Lasdf" }, 
+    "shoulderForm": [
+        { "testName": "Lasdf", "left": "Lasdf", "right": "Lasdf", "Rn": true, "Pn": true }
+     ] 
+   },
+  "treatments": {
+    "shoulderOption":[{"left":"yashkkk", "leftValue":"yashkkk", "right":"yashkkk", "rightValue":"yashkkk"}],
+    "adjacent":true,
+    "Scoliosis":true,
+    "Distraction":true,
+    "exam":true,
+    "DC":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "HP":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "Kinesiotaping":{
+      "name":{ "tspine":true, "lspine":true, "both":true },
+      "kinesiotapingPosition": [{ "left":"yashkkk", "right":"yashkkk" }],
+      "treatmentPlan":{ "asNeed":true, "time":true },
+      "treatmentFrequency":{ "frequency":"yashkkk", "duration":"yashkkk" },
+      "nextAppointments":{ "first":"yashkkk", "second":"yashkkk", "third":"yashkkk" }
+    }
+  }
+}
+
+  
+###
+GET {{host}}/allByExaminationId
+?id=64dcc4ce642d773f33a61999
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+
+###
+GET {{host}}/byId
+?id=6411839bc41843aa757f9950
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+
+###
+GET {{host}}/all/byPatientId
+?id=6422899c903aa57315e158e3
+Content-Type: application/json
+Authorization: Bearer {{token}} 

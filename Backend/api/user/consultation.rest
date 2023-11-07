@@ -1,0 +1,82 @@
+@host=http://localhost:5001/api/v1/user/consultation
+# @host=https://stage-api.myintellispine.com/api/v1/user/consultation
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzhhYjc0MjIzMDgxNjI4OTdmMDAwZiIsImVtYWlsIjoiY2hhbmNoYWxAeW9wbWFpbC5jb20iLCJyb2xlIjoiQWNvdW50IG93bmVyIiwiaWF0IjoxNjkyMTY1NzY0fQ.46ZcDabON16onxFXNCX4OquHRlFpPVkGtXe0XdTSn10
+
+POST {{host}}/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "symptomsArr": [{
+    "symptom": "Dengue"
+  }],
+  "date": "2023-06-17",
+  "patientId": "64e35f83b0f665bfdec469d9"
+}
+
+###
+POST {{host}}/addSymptoms
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "symptomsArr": [{
+    "symptom": "Neck pain / HWS",
+    "warnings": [{"start": "January", "end": "Febraury"}],
+    "consultationId": "64b7af342f15f595b7b1fe14"
+  }]
+}
+
+###
+PATCH {{host}}/updateSymptom
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "637dc8b6bc2481a4cc1e88ee",
+  "symptom": "Neck pain /"
+}
+
+###
+GET {{host}}/symptomById
+?id=637df6a5a3fee1c82d3967be
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/all
+?search=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/recent
+?search=
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/byPatientId
+?id=6488068d8a6453ce05ad433e
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/byId
+?id=64ddfba20a47e0ad2a5f8edb
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+PATCH  {{host}}/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "635fbe4ea1c16c53e47e9f05",
+  "radiates": ["Abhishek"]
+}

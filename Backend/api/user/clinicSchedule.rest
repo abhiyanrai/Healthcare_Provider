@@ -1,0 +1,51 @@
+@host=http://localhost:5001/api/v1/user/clinicSchedule
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTQxMWIwN2Y2NmM2YjBlNjgzMGY0MiIsImVtYWlsIjoibmFpbmFzaHdhbmlAZ21haWwuY29tIiwicm9sZSI6IkFjb3VudCBvd25lciIsImlhdCI6MTY5NTAxMjIxNH0.BQtqAx0YKByIyCpHTwWKCPU6Nd71u-yDls7qRHfzHww
+
+POST {{host}}/createAndUpdate
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{   "id": "65080cbb050634c389771a67",
+    "scheduleDetails": [
+  {
+       "day": "Monday",
+    "schedule": [
+        { "startTime": "Tue May 31 2023 16:00:00 GMT+0530 (India Standard Time)",
+          "endTime": "Tue May 31 2023 16:00:00 GMT+0530 (India Standard Time)"
+        },
+        {
+          "startTime": "Tue May 31 2023 16:00:00 GMT+0530 (India Standard Time)",
+          "endTime": "Tue May 31 2023 16:00:00 GMT+0530 (India Standard Time)"
+        }
+    ]
+  }
+ ],
+ "holidays": [
+  {
+    "startDate": "2023-12-14",
+    "endDate": "2023-12-15",
+    "name": "Winter Vacation"
+  }
+ ]
+}
+
+###
+GET {{host}}/getByAccountOwner
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+DELETE {{host}}/holidays
+?holidayId=65083230a10eed7fc4ecaf70
+&holidayName=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+
+
+
+

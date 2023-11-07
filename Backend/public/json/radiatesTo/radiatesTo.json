@@ -1,0 +1,26 @@
+[
+
+    {"id": "1", "name": "Head"}, 
+    {"id": "2", "name": "Shoulder"}, 
+    {"id": "3", "name": "Upper Arm"}, 
+    {"id": "4", "name": "Lower Arm"}, 
+    {"id": "5", "name": "Hand - fingers"}, 
+    {"id": "6", "name": "Fingers 1,2,3"}, 
+    {"id": "7", "name": "Fingers 3,4,5"}, 
+    {"id": "8", "name": "Upper back"}, 
+    {"id": "9", "name": "Shoulder blades"}, 
+    {"id": "10", "name": "Chest"}, 
+    {"id": "11", "name": "Low back"}, 
+    {"id": "12", "name": "Si Joint"}, 
+    {"id": "13", "name": "Buttocks"}, 
+    {"id": "14", "name": "From Buttocks to foot/feet"}, 
+    {"id": "15", "name": "Posterior Thigh"}, 
+    {"id": "16", "name": "Anterior Thigh"}, 
+    {"id": "17", "name": "Lateral high"}, 
+    {"id": "18", "name": "Knee front"}, 
+    {"id": "19", "name": "Knee lateral"}, 
+    {"id": "20", "name": "Knee medial"}, 
+    {"id": "21", "name": "Knee posterior"}, 
+    {"id": "22", "name": "Calf"} 
+
+]

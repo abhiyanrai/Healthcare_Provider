@@ -1,0 +1,16 @@
+@host=http://localhost:5001/api/v1/common/uploads
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzhhYjc0MjIzMDgxNjI4OTdmMDAwZiIsImVtYWlsIjoiY2hhbmNoYWxAeW9wbWFpbC5jb20iLCJyb2xlIjoiQWNvdW50IG93bmVyIiwiaWF0IjoxNjkwODcyNzI5fQ.W6LtJbEHXMnvJorQx5tB1pq_GilOaLj-u6po6L-9thU
+POST {{host}}/file
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/csv-file
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+POST {{host}}/csv-diagnoses
+Content-Type: application/json
+Authorization: Bearer {{token}}

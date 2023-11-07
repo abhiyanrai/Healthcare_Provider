@@ -1,0 +1,10 @@
+[
+    {"id": "1", "name": "Sports"}, 
+    {"id": "2", "name": "Walking"}, 
+    {"id": "3", "name": "Working"}, 
+    {"id": "4", "name": "Running"}, 
+    {"id": "5", "name": "Lifting"}, 
+    {"id": "6", "name": "Sitting"}, 
+    {"id": "7", "name": "Lying Down"}, 
+    {"id": "8", "name": "Rest"} 
+]

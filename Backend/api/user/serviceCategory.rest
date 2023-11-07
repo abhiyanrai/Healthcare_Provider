@@ -1,0 +1,47 @@
+@host=http://localhost:5001/api/v1/user/serviceCategory
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTQxMWIwN2Y2NmM2YjBlNjgzMGY0MiIsImVtYWlsIjoibmFpbmFzaHdhbmlAZ21haWwuY29tIiwicm9sZSI6IkFjb3VudCBvd25lciIsImlhdCI6MTY5NDc1ODg4MH0.V4Lyrfl1mX_CSkijVnjv72T-VjzsMHzMuKnDTh7Uw4o
+
+
+###
+POST {{host}}/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "My FirstCategory"
+}
+
+
+###
+GET {{host}}/all
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+PATCH  {{host}}/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "6411903efba499ce2384b575",
+  "name": "HP Charges LWS"
+}
+
+
+###
+PUT {{host}}/delete
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+  "id": "6411903efba499ce2384b575"
+}
+
+
+###
+GET {{host}}/byId
+?id=6411903efba499ce2384b575
+Content-Type: application/json
+Authorization: Bearer {{token}}

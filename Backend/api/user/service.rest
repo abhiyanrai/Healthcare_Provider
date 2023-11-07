@@ -1,0 +1,87 @@
+@host=http://localhost:5001/api/v1/user/service
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTQxMWIwN2Y2NmM2YjBlNjgzMGY0MiIsImVtYWlsIjoibmFpbmFzaHdhbmlAZ21haWwuY29tIiwicm9sZSI6IkFjb3VudCBvd25lciIsImlhdCI6MTY5NDc1ODg4MH0.V4Lyrfl1mX_CSkijVnjv72T-VjzsMHzMuKnDTh7Uw4o
+
+
+###
+POST {{host}}/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "serviceName": "MyComputer Services",
+  "serviceDescp": "Hey this is my first descp!",
+  "amount": "3526",
+  "categoryId": "650404be832f432a5f34cbb8",
+  "subService": [{
+    "subServiceName":"Sub-Service 3",
+    "amount":1550,
+    "tax":[
+      {"name":"VAT-1","value":15},
+      {"name":"VAT-2","value":30}
+  ]
+  }, {
+     "service":"Sub-Service 4",
+    "amount":9900,
+    "tax":[
+      {"name":"VAT-3","value":17},
+      {"name":"VAT-4","value":7}
+  ]
+  }]
+}
+
+###
+POST {{host}}/subServicesCalculation
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "serviceName": "Main Servicess",
+  "serviceDescp": "Hey this is my first descp!",
+  "amount": 2733,
+  "text": [
+    {"name": "VAT", "value": 100 }
+  ]
+}
+
+
+###
+GET {{host}}/all
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+PATCH {{host}}/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "64dca98969a1857363c7fbb3",
+  "serviceName": "Diganosis",
+  "amount": "8973",
+  "text": [
+    { text: "Nae", value: 260 }
+  ]
+}
+
+
+
+###
+PUT {{host}}/delete
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+  "id": "63ef52229c8ec1e45be1b23a"
+}
+  
+
+###
+GET {{host}}/getById
+?id=6502dde3c041e9847f7a2c70
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+
+
+# 64dca807290ba928d698446d

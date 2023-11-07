@@ -1,0 +1,44 @@
+@host=http://localhost:5001/api/v1/user/room
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzhhYjc0MjIzMDgxNjI4OTdmMDAwZiIsImVtYWlsIjoiY2hhbmNoYWxAeW9wbWFpbC5jb20iLCJyb2xlIjoiQWNvdW50IG93bmVyIiwiaWF0IjoxNjkyMTY1NzY0fQ.46ZcDabON16onxFXNCX4OquHRlFpPVkGtXe0XdTSn10
+
+
+POST {{host}}/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "roomName" : "101"
+}
+
+
+###
+GET {{host}}/all
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+PATCH  {{host}}/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "64d0813cf48be353e7210a2d",
+  "roomName": "007"
+}
+
+###
+PUT {{host}}/delete
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+  "id": "63ef50d09c8ec1e45be1b22c"
+}
+
+
+###
+GET {{host}}/byId
+?id=63ef50ba9c8ec1e45be1b22a
+Content-Type: application/json
+Authorization: Bearer {{token}}

@@ -1,0 +1,84 @@
+@host=http://localhost:5001/api/v1/user/patient
+# @token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MjI4OTQzOTAzYWE1NzMxNWUxNThkZiIsImVtYWlsIjoiZ3VsYWJAZ21haWwuY29tIiwicm9sZSI6IkFjb3VudCBvd25lciIsImlhdCI6MTY3OTk4NDk2M30.TEa6FuNNdMxlcpJ8PS23r2qZAkClLmH5kv99Hm1vdFg
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTQxMWIwN2Y2NmM2YjBlNjgzMGY0MiIsImVtYWlsIjoibmFpbmFzaHdhbmlAZ21haWwuY29tIiwicm9sZSI6IkFjb3VudCBvd25lciIsImlhdCI6MTY5NDc1ODg4MH0.V4Lyrfl1mX_CSkijVnjv72T-VjzsMHzMuKnDTh7Uw4o
+POST {{host}}/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "salutation": "MR.",
+  "firstName": "Neha",
+  "lastName": "Rathore",
+  "email":"neha0001@gmail.com", 
+  "registrationDate": "2023-07-29",
+  "dob": "2000-09-02",
+  "gender": "Male",
+  "contactNo": "9873423474",
+  "address": "C-6/171, Sector 31, Noida",
+  "zipcode": "201301",
+  "city": "Noida",
+  "fileNo": "shar12612"
+}
+
+###
+GET {{host}}/byId
+?id=64707a331413085c55e71701
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/all
+?search=
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/allPatientData
+?id=6439254995d03e3504c455d9
+Content-Type: application/json
+Authorization: Bearer {{token}}   
+
+###
+GET {{host}}/withoutConsultation
+?search=
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/newPatients
+?search=
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/regularPatients
+?search=kushwaha
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+PATCH  {{host}}/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "641c4afea0b3f17a22a5cfd6",
+  "lastName": "Nainassa"
+}
+
+###
+GET {{host}}/withExamination
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+
+

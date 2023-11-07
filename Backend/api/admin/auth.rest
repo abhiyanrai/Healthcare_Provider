@@ -1,0 +1,28 @@
+# @host=https://stage-api.myintellispine.com/api/v1/admin/auth
+@host=http://localhost:5000/api/v1/admin/auth
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDY4NDFlODU0YjBjNTk3MmNiNTcxNSIsImVtYWlsIjoiYWJoaXNoZWszQGdtYWlsLmNvbSIsInJvbGUiOiJIZWFsdGggY2FyZSBwcm92aWRlciIsImlhdCI6MTY2NjA3MzExNSwiZXhwIjoxNjgxNjI1MTE1fQ.SXQOOo3cWE348NBeJfmTUR0-DTeqvwT7PqtuAwVxfvI
+POST {{host}}/register
+Content-Type: application/json
+
+{
+  "salutation": "Dr.",
+  "firstName": "Super",
+  "lastName": "Admin",
+  "email": "superadmin@intellispine.com",
+  "password": "Super@123"
+}
+
+### 
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "email": "superadmiddn@intellispine.com",
+  "password": "Super@123",
+  "acceptCheckbox": true
+}
+
+###
+GET {{host}}/dashboard/all
+Content-Type: application/json
+Authorization: Bearer {{token}}

@@ -1,0 +1,14 @@
+[
+
+    {"id": "1", "name": "Family Doctor / Hausarzt"}, 
+    {"id": "2", "name": "Orthopedist"}, 
+    {"id": "3", "name": "Osteopath"}, 
+    {"id": "4", "name": "Chiropractor"}, 
+    {"id": "5", "name": "Heiplraktiker"}, 
+    {"id": "6", "name": "Physiotherapeut"}, 
+    {"id": "7", "name": "Surgeon"}, 
+    {"id": "8", "name": "Massage Therapeut"}, 
+    {"id": "9", "name": "Psychologe"}, 
+    {"id": "10", "name": "Andere"}
+
+]

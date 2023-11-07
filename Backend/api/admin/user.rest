@@ -1,0 +1,42 @@
+@host=http://localhost:5001/api/v1/admin
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTUzYjE1MGM1ZDNjNWU3MzFhN2JjNyIsImVtYWlsIjoic3VwZXJhZG1pbkBpbnRlbGxpc3BpbmUuY29tIiwicm9sZSI6IlN1cGVyIGFkbWluIiwiaWF0IjoxNjg4NzE4MjYyfQ.Lf5zhySaF2Dax9-ye4iC7hH3kC1EF5cqOCVuMKgicuQ
+
+###
+GET {{host}}/dashboard/all
+?search=
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/accountOwner/byId
+?id=64b1259c09fe575f3d376e70
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/exports/accountOwners
+?startDate=2023-07-10
+&endDate=2023-07-19
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+GET {{host}}/exports/providers
+?startDate=2023-07-10
+&endDate=2023-07-19
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/exports/patients
+?startDate=2023-07-10
+&endDate=2023-07-19
+Content-Type: application/json
+Authorization: Bearer {{token}}

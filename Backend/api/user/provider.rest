@@ -1,0 +1,615 @@
+@host=http://localhost:5001/api/v1/user/provider/
+# @token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODgwNGY0ZmU2NTk0OGI3YTE2OTRiYiIsImVtYWlsIjoicmFtYXNocmVlQGdtYWlsLmNvbSIsInJvbGUiOiJBY291bnQgb3duZXIiLCJpYXQiOjE2ODY2MzU3NzV9.P6UC_NqnXqnGx4GbvPy5iITklYwDtla57eq3U2urEnU
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZWQ4ZjM4ZmE3M2EwZDlmZmNjYjBiMSIsImVtYWlsIjoic29oYWlsQHRlYW0uY2xpZmZleC5jb20iLCJyb2xlIjoiSGVhbHRoIGNhcmUgcHJvdmlkZXIiLCJpYXQiOjE2OTMyOTAzNDZ9.gFUq_665LuT2sIpoTdmdwu0Xt5YK9g6b-WC2T5EiTEk
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/byId
+?id=6422de5270c21ec91fd8b79d
+Content-Type: application/json  
+Authorization: Bearer {{token}}
+
+
+###
+PATCH {{host}}/deleteProvider
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+  "id": "648966476febad0f3b4535d9"
+}
+  
+###
+PATCH {{host}}/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "6346841e854b0c5972cb5716",
+  "firstName" : "Abhishek",
+  "lastName": "Kashyap",
+  "contactNo": 12345678
+}
+
+###
+GET {{host}}/allProvider
+?page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+PATCH {{host}}/changePassword
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "oldPassword" : "Pp5*Kk0#",
+  "newPassword" : "Bhargav@123",
+  "confirmPassword" : "Bhargav@123"
+}
+
+###
+POST {{host}}/createPatient
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "salutation": "MR.",
+  "firstName": "Subash",
+  "lastName": "Prem",
+  "email":"subashhh@gmail.com", 
+  "registrationDate": "2010-06-28",
+  "dob": "2022-09-15"
+}
+
+###
+GET {{host}}/patient/all
+?search=
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/patient/trackPatient
+?id=649bc2f20d653eb0e1b9b521
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/newPatients
+?search=
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/regularPatients
+?search=
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/patient/withoutConsultation
+?search=
+&page=3
+&limit=1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/patient/byId
+?id=6422de5270c21ec91fd8b79d
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+PATCH  {{host}}/patient/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "6422de5270c21ec91fd8b79d",
+  "firstName": "Shahrukh"
+}
+
+###
+POST {{host}}/createConsultation
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "symptomsArr": [{
+    "symptom": "Mongoose"
+  }], 
+  "date": "2023-04-13",
+  "patientId": "64e5ce414ee245954365f7b6"
+}
+
+
+###
+GET {{host}}/consultation/byId
+?id=6437e445a4731525e38beab6
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+PATCH  {{host}}/consultation/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "6437e445a4731525e38beab6",
+  "radiates": ["Abhishek"]
+}
+
+
+###
+POST {{host}}/consultation/addSymptoms
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "symptomsArr": [{
+    "symptom": "Neasck pain / HWS",
+    "warnings": [{"start": "asdf", "end": "filo"}],
+    "consultaionId": "6437e445a4731525e38beab6"
+  }]
+}
+
+
+###
+PATCH {{host}}/consultation/updateSymptom
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "6437e64ee98c46f2d4513a14",
+  "symptom": "Neck pain /"
+}
+
+
+###
+GET {{host}}/consultation/symptomById
+?id=6437e64ee98c46f2d4513a14
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/consultation/all
+?search=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+GET {{host}}/consultation/recent
+?search=raina
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+POST {{host}}/createExamination
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "consultationId": "64e5cf50b7051252fb7576f5",
+    "functional" : {
+        "Adams": { 
+        "FixedSI": { "position": { "left": true, "right": true }, "BLT": true },
+        "Free": { "position": { "left": true, "right": true }, "BLT":  true},
+        "Lumb": { "position": { "left": true, "right": true }, "Deg": "gg", "Neg": true },
+        "Thor": { "position": { "left": true, "right": true }, "Deg": "hh", "Neg": true }
+    },
+    "Crom": { 
+        "EXT": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "FLX": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "LLB": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "LROT": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "PROT": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "RLB": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" }
+    },
+    "Listings": { "L1": "Lasdf", "L2": "Lasdf", "L3": "Lasdf" },
+    "Notes": "Lasdf",
+    "SI": { "low": true, "position": { "left": true, "right": true }, "cm": "4.8" },
+    "ProneCrest": { "height": true, "position": { "left": true, "right": true }, "cm": "6.9" },
+    "TMJ": { "step1": "Lasdf", "step2": "Lasdf", "step3": "Lasdf" }, 
+    "shoulderForm": [
+        { "testName": "Lasdf", "left": "Lasdf", "right": "Lasdf", "Rn": true, "Pn": true }
+     ] 
+   },
+       "orthopedic": {
+    
+   },
+    "diagnoses": {
+    "additionalDxs": [ { "name": "uahsd", "value": "2" } ],
+    "bone": [ { "name": "uahsd", "value": "4" } ],
+    "diagnose": [ { "name": "uahsd", "value": "5" } ],
+    "osteopathic": [ { "name": "uahsd", "value": "8" } ]
+  },
+  "treatments": {
+    "shoulderOption":[{"left":"yashkkk", "leftValue":"yashkkk", "right":"yashkkk", "rightValue":"yashkkk"}],
+    "adjacent":true,
+    "Scoliosis":true,
+    "Distraction":true,
+    "exam":true,
+    "DC":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "HP":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "Kinesiotaping":{
+      "name":{ "tspine":true, "lspine":true, "both":true },
+      "kinesiotapingPosition": [{ "left":"yashkkk", "right":"yashkkk" }],
+      "treatmentPlan":{ "asNeed":true, "time":true },
+      "treatmentFrequency":{ "frequency":"yashkkk", "duration":"yashkkk" },
+      "nextAppointments":{ "first":"yashkkk", "second":"yashkkk", "third":"yashkkk" }
+    }
+  }
+}
+
+
+
+###
+GET {{host}}/examination/byId
+?id=64392159fbc124c235d30fa2
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+PATCH {{host}}/examination/updateById
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+   "id": "64392159fbc124c235d30fa2",
+    "functional" : {
+        "Adams": { 
+        "FixedSI": { "position": { "left": true, "right": true }, "BLT": true },
+        "Free": { "position": { "left": true, "right": true }, "BLT":  true},
+        "Lumb": { "position": { "left": true, "right": true }, "Deg": "gg", "Neg": true },
+        "Thor": { "position": { "left": true, "right": true }, "Deg": "hh", "Neg": true }
+    },
+    "Crom": { 
+        "EXT": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "FLX": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "LLB": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "LROT": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "PROT": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "RLB": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" }
+    },
+    "Listings": { "L1": "Lasdf", "L2": "Lasdf", "L3": "Lasdf" },
+    "Notes": "Lasdf",
+    "SI": { "low": true, "position": { "left": true, "right": true }, "cm": "Lasdf" },
+    "proneCrest": { "height": true, "position": { "left": true, "right": true }, "cm": "Lasdf" },
+    "TMJ": { "step1": "Lasdf", "step2": "Lasdf", "step3": "Lasdf" }, 
+    "shoulderForm": [
+        { "testName": "Lasdf", "left": "Lasdf", "right": "Lasdf", "Rn": true, "Pn": true }
+     ] 
+   },
+       "orthopedic": {
+       
+   },
+    "diagnoses": {
+    "additionalDxs": [ { "name": "uahsd", "value": "2" } ],
+    "bone": [ { "name": "uahsd", "value": "4" } ],
+    "diagnose": [ { "name": "uahsd", "value": "5" } ],
+    "osteopathic": [ { "name": "uahsd", "value": "8" } ]
+  },
+  "treatments": {
+    "shoulderOption":[{"left":"Shubramam", "leftValue":"Shubramam", "right":"Shubramam", "rightValue":"Shubramam"}],
+    "adjacent":true,
+    "Scoliosis":true,
+    "Distraction":true,
+    "exam":true,
+    "DC":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "HP":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "Kinesiotaping":{
+      "name":{ "tspine":true, "lspine":true, "both":true },
+      "kinesiotapingPosition": [{ "left":"yashkkk", "right":"yashkkk" }],
+      "treatmentPlan":{ "asNeed":true, "time":true },
+      "treatmentFrequency":{ "frequency":"yashkkk", "duration":"yashkkk" },
+      "nextAppointments":{ "first":"yashkkk", "second":"yashkkk", "third":"yashkkk" }
+    }
+  }
+}
+
+
+###
+GET {{host}}/service/all
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/room/all
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+POST {{host}}/createAppointment
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "patientId": "649bc2f20d653eb0e1b9b521",
+  "serviceId": "6488092891c1336f84684a51",
+  "roomId": "6488093691c1336f84684a54",
+  "status" : "active",
+  "startTime" : "2023-07-01T09:45:00.000Z",
+  "endTime" : "2023-07-01T10:00:00.000Z",  
+  "duration" : "30",
+  "appointmentType": "Cancelled",
+  "appointmentFreq": "36"
+}
+
+
+###
+GET {{host}}/appointment/all
+?startDate=2023-06-30
+&endDate=2023-06-30
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/appointment/byId
+?id=64394e538887b042a8f352b0
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+PATCH  {{host}}/appointment/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "64394e538887b042a8f352b0",
+  "startTime" : "Heyyyy",
+  "endTime" : "03:30",
+  "duration" : "45",
+  "appointmentType": "Cancelled",
+  "appointmentFreq": "3"
+}
+
+
+
+###
+PATCH {{host}}/appointment/delete
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+  "id": "649c0e5fb8f844c67900d335"
+}
+
+
+###
+GET {{host}}/appointment/allByPatientId
+?id=64394e168887b042a8f352a9
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+POST {{host}}/billing/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+ "patientId": "64e5e9ffac2936c20b799fc7",
+    "totalAmount": 509,
+    "discountApplied": 19,
+    "billAmount": 388.8,
+    "orderJson": [
+        {
+          "serviceId": "64e32407474a2198a1d34726"
+        }
+    ],
+    "serviceDate": "2000-10-19",
+    "paymentMode": "Cash"
+}
+
+
+
+###
+PATCH  {{host}}/billing/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "643ce38660c9b8f52571fa24",
+  "discountApplied": "80%"
+}
+
+
+###
+PUT {{host}}/billing/delete
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+  "id": "643ce38660c9b8f52571fa24"
+}
+
+
+
+###
+GET {{host}}/billing/byId
+?id=643ce68e94b75a686a4d621b
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/billing/all/byPatientId
+?id=64394e168887b042a8f352a9
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+
+
+###
+POST {{host}}/visitDetail/create
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+{ 
+    "appointmentId": "643d123fbbb21d1bed12ef3c",
+    "examinationId": "643d12db52fcbbc71b5ece9c",
+    "patientId": "64394e168887b042a8f352a9",
+    "functional" : {
+        "Adams": { 
+        "FixedSI": { "position": { "left": true, "right": true }, "BLT": true },
+        "Free": { "position": { "left": true, "right": true }, "BLT":  true},
+        "Lumb": { "position": { "left": true, "right": true }, "Deg": "gg", "Neg": true },
+        "Thor": { "position": { "left": true, "right": true }, "Deg": "hh", "Neg": true }
+    },  
+    "Crom": { 
+        "EXT": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "FLX": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "LLB": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "LROT": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "PROT": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" },
+        "RLB": { "Dec": true, "Inc": false, "Normal": false, "Deg": "Lasdf" }
+    },
+    "Listings": { "L1": "Lasdf", "L2": "Lasdf", "L3": "Lasdf" },
+    "Notes": "Lasdf",
+    "SI": { "low": true, "position": { "left": true, "right": true }, "cm": "8.4" },
+    "ProneCrest": { "height": true, "position": { "left": true, "right": true }, "cm": "0.1" },
+    "TMJ": { "step1": "Lasdf", "step2": "Lasdf", "step3": "Lasdf" }, 
+    "shoulderForm": [
+        { "testName": "Lasdf", "left": "Lasdf", "right": "Lasdf", "Rn": true, "Pn": true }
+     ] 
+   },
+  "treatments": {
+    "shoulderOption":[{"left":"yashkkk", "leftValue":"yashkkk", "right":"yashkkk", "rightValue":"yashkkk"}],
+    "adjacent":true,
+    "Scoliosis":true,
+    "Distraction":true,
+    "exam":true,
+    "DC":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "HP":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "Kinesiotaping":{
+      "name":{ "tspine":true, "lspine":true, "both":true },
+      "kinesiotapingPosition": [{ "left":"yashkkk", "right":"yashkkk" }],
+      "treatmentPlan":{ "asNeed":true, "time":true },
+      "treatmentFrequency":{ "frequency":"yashkkk", "duration":"yashkkk" },
+      "nextAppointments":{ "first":"yashkkk", "second":"yashkkk", "third":"yashkkk" }
+    }
+  } 
+}
+
+
+
+
+###
+PATCH {{host}}/visitDetail/updateById
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+   "id": "643d12f552fcbbc71b5eceda",
+    "functional" : {
+        "Adams": { 
+        "FixedSI": { "position": { "left": true, "right": true }, "BLT": true },
+        "Free": { "position": { "left": true, "right": true }, "BLT":  true},
+        "Lumb": { "position": { "left": true, "right": true }, "Deg": "gg", "Neg": true },
+        "Thor": { "position": { "left": true, "right": true }, "Deg": "hh", "Neg": true }
+    },
+    "Crom": { 
+        "EXT": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "FLX": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "LLB": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "LROT": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "PROT": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" },
+        "RLB": { "Dec": true, "Inc": true, "Normal": true, "Deg": "Jim" }
+    },
+    "Listings": { "L1": "Lasdf", "L2": "Lasdf", "L3": "Lasdf" },
+    "Notes": "Lasdf",
+    "SI": { "low": true, "position": { "left": true, "right": true }, "cm": "4" },
+    "proneCrest": { "height": true, "position": { "left": true, "right": true }, "cm": "2" },
+    "TMJ": { "step1": "Lasdf", "step2": "Lasdf", "step3": "Lasdf" }, 
+    "shoulderForm": [
+        { "testName": "Lasdf", "left": "Lasdf", "right": "Lasdf", "Rn": true, "Pn": true }
+     ] 
+   },
+  "treatments": {
+    "shoulderOption":[{"left":"HEavnn", "leftValue":"yashkkk", "right":"yashkkk", "rightValue":"yashkkk"}],
+    "adjacent":true,
+    "Scoliosis":true,
+    "Distraction":true,
+    "exam":true,
+    "DC":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "HP":{ "name":"yashkkk", "cervical":"yashkkk", "lumber":"yashkkk", "thoracic":"yashkkk", "extermity":"yashkkk" },
+    "Kinesiotaping":{
+      "name":{ "tspine":true, "lspine":true, "both":true },
+      "kinesiotapingPosition": [{ "left":"yashkkk", "right":"yashkkk" }],
+      "treatmentPlan":{ "asNeed":true, "time":true },
+      "treatmentFrequency":{ "frequency":"yashkkk", "duration":"yashkkk" },
+      "nextAppointments":{ "first":"yashkkk", "second":"yashkkk", "third":"yashkkk" }
+    }
+  }
+}
+
+
+###
+GET {{host}}/visitDetail/byId
+?id=643d12f552fcbbc71b5eceda
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+
+
+
+###
+GET {{host}}/visitDetail/allByExaminationId
+?id=6411726b047140c95c64a2d6
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+GET {{host}}/getScheduleDetails
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+GET {{host}}/getVisitByPatientId
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/options/byModelId
+?id=63f60f3d3bf7cc2e6d21ec56
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/dropdown/models/all
+Content-Type: application/json
+Authorization: Bearer {{token}}

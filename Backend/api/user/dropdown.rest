@@ -1,0 +1,55 @@
+@host=http://localhost:5001/api/v1/user/dropdown
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODE5ZWI2NDFhOTljMzllMzVjMDQwNiIsImVtYWlsIjoicHJhdmVlbnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiQWNvdW50IG93bmVyIiwiaWF0IjoxNjg2MjE2MzgxfQ.AImedo7AXI4GNLx77-nt-8rotj0As6MEEMAevN893-g
+
+
+
+POST {{host}}/model/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name" : "Track Patient"
+}
+
+
+###
+GET {{host}}/model/all
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+POST {{host}}/option/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name" : "Massage Theraput",
+    "modelId": "63f60fc33bf7cc2e6d21ed10"
+}
+
+###
+PATCH {{host}}/option/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "id": "6405902bc434d2138d21df99",
+    "name":"ashwini"
+}
+
+###
+PUT {{host}}/option/delete
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+  "id": "64819eb641a99c39e35c0408"
+}
+
+
+###
+GET {{host}}/option/all/bymodelId   
+?id=63f60f3d3bf7cc2e6d21ec56
+Content-Type: application/json 
+Authorization: Bearer {{token}}

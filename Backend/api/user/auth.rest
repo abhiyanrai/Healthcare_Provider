@@ -1,0 +1,116 @@
+@host=http://192.168.1.163:5001/api/v1/user/auth
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzhhYjc0MjIzMDgxNjI4OTdmMDAwZiIsImVtYWlsIjoiY2hhbmNoYWxAeW9wbWFpbC5jb20iLCJyb2xlIjoiQWNvdW50IG93bmVyIiwiaWF0IjoxNjkyMTY1NzY0fQ.46ZcDabON16onxFXNCX4OquHRlFpPVkGtXe0XdTSn10
+
+###
+POST {{host}}/register
+Content-Type: application/json
+
+{
+    "salutation": "Dr.",
+    "firstName": "prem",
+    "lastName": "Sharma",
+    "email": "premmm@gmail.com"
+}
+
+
+###
+POST {{host}}/registerOwner
+Content-Type: application/json
+
+{
+    "salutation": "Dr.",
+    "firstName": "Virkam",
+    "lastName": "Sonu",
+    "email": "sonuuu@yopmail.com",
+    "password": "Mehtoos@123",
+    "confirmPassword": "Mehtoos@123"
+}
+
+###
+POST {{host}}/loginOwner
+Content-Type: application/json
+
+{
+    "email": "nainashwani@gmail.com",
+    "password": "Test@123",
+    "acceptCheckbox": false
+}
+
+###
+POST {{host}}/sendOtp
+Content-Type: application/json
+
+{
+    "email": "kaliaaaya@gmail.com"
+}
+
+###
+POST {{host}}/verifyOtp
+Content-Type: application/json
+
+{
+    "email": "kaliaaaya@gmail.com",
+    "otp": "672640",
+    "acceptCheckbox": true
+}
+
+###
+POST {{host}}/registerProvider
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{ 
+      "salutation": "Mr.",
+    "firstName": "ritesh",
+    "lastName" : "gsupta",
+    "email": "rrridvsfii@gmail.com",
+    "specialization": "byyyyyyy",
+    "address": "yeeeeeeeee",
+    "contactNo": "983823732323"
+}
+
+###
+POST {{host}}/saveAndsendProvider
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{   "salutation": "Mr.",
+    "firstName": "Sohail",
+    "lastName" : "Verma",
+    "email": "sohaillll@team.cliffex.com",
+    "specialization": "byyyyyyy",
+    "address": "yeeeeeeeee",
+    "contactNo": "983823732323"
+}
+
+### 
+POST {{host}}/sendProvider
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{  
+     "salutation": "Mr.",
+    "firstName": "ritesh",
+    "lastName" : "gsupta",
+    "email": "rrridvsfii@gmail.com",
+    "specialization": "byyyyyyy",
+    "address": "yeeeeeeeee",
+    "contactNo": "983823732323"
+}
+
+
+
+###
+POST {{host}}/loginProvider
+Content-Type: application/json
+
+{
+    "email": "sohaillll@team.cliffex.com",
+    "password": "Ff5^Ii8!",
+    "acceptCheckbox": "true"
+}
+
+
+
+
+

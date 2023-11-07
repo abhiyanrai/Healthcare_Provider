@@ -1,0 +1,16 @@
+@host=http://localhost:5001/api/v1/common/stripe
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MjJlOWI1Yzg3OGI1NTc2NmE4OGJkMSIsImVtYWlsIjoiYWJoaXNoZWs2QHlvcG1haWwuY29tIiwicm9sZSI6IkFjb3VudCBvd25lciIsImlhdCI6MTY4MDAwOTY4Mn0.WAYL0yxYKgZRlgE6sExQOMOHPmBZLz9crv_uoFpWpAk
+POST {{host}}/subscription
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "line_items": [{"price": "a","quantity": 1}], 
+  "success_url": "http://localhost:3000/success",
+  "cancel_url": "http://localhost:3000/cancel"
+}
+
+###
+POST {{host}}/webhook
+Content-Type: application/json
+Authorization: Bearer {{token}}

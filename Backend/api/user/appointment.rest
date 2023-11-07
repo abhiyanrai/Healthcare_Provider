@@ -1,0 +1,87 @@
+
+@host=http://localhost:5001/api/v1/user/appointment
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTQxMWIwN2Y2NmM2YjBlNjgzMGY0MiIsImVtYWlsIjoibmFpbmFzaHdhbmlAZ21haWwuY29tIiwicm9sZSI6IkFjb3VudCBvd25lciIsImlhdCI6MTY5MzIwMDI5OH0.x0Ri65amYpMik4qoDqpjbpM04vXP0f6fm_8KOqFXvQ0
+
+
+###
+POST {{host}}/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "patientId": "64e5e9ffac2936c20b799fc7",
+  "serviceId": "6488092891c1336f84684a51",
+  "roomId": "6488093691c1336f84684a54",
+  "startTime" : "2023-07-17T012:00:00.000Z",
+  "endTime" : "2023-07-17T01:00:00.000Z",  
+  "duration" : "30",
+  "appointmentType": "New",
+  "appointmentFreq": "36"
+}
+
+
+###
+PATCH  {{host}}/update
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "63ef6b18daceac94e7344966",
+  "startTime" : "poansdkf:00",
+  "endTime" : "03:30",
+  "duration" : "45",
+  "appointmentType": "Cancelled",
+  "appointmentFreq": "3"
+}
+
+
+###
+GET {{host}}/all
+?startDate=2023-07-17
+&page=
+&limit=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/trackPatient
+?id=64903aca6964f64edc3a0855
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+GET {{host}}/allByPatientId
+?id=64dc6696d4b7d3345fa4ba81
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/byId
+?id=64707cee3b55766b5e89ba47
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+PATCH {{host}}/delete
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+  "id": "63fc6b31e1277196e060b701"
+}
+
+
+###
+PATCH  {{host}}/cancel
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "appointmentId": "647edf36644b7003e8cf5115",
+  "actionType": "cancel"
+}
+  
